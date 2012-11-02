@@ -13,7 +13,7 @@ class UsersController < ApplicationController
     @user = User.new(params[:user])
     
     if @user.save
-      redirect @user, notice: "Thank you for signing up for Ribbit!"
+      redirect_to @user, notice: "Thank you for signing up for Ribbit!"
     else
       render 'new'
     end

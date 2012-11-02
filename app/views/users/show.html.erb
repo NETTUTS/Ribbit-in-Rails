@@ -1,0 +1,22 @@
+<div class="wrapper">
+  <div id="createRibbit" class="panel right">
+    <h1>Create a Ribbit</h1>
+    <p>
+      <form>
+        <textarea name="text" class="ribbitText"></textarea>
+        <input type="submit" value="Ribbit!">
+      </form>
+    </p>
+  </div>
+  <div id="ribbits" class="panel left">
+    <h1>Your Ribbit Profile</h1>
+    <div class="ribbitWrapper">
+      <img class="avatar" src="/gfx/user1.png">
+      <span class="name"><%= @user.name %></span> @<%= @user.username %>
+      <p>
+        567 Ribbits<span class="spacing">45 Followers</span><span class="spacing">32 Following</span><br>
+        Cras justo odio, dapibus ac facilisis in, egestas Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. <a href="#">http://net.tutsplus.com/tutorials/php/ ...</a>
+      </p>
+    </div>
+  </div>
+</div>
