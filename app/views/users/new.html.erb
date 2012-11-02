@@ -1,9 +1,18 @@
 <div class="wrapper">
+
   <img src="/gfx/frog.jpg">
   <div class="panel right">
     <h1>New to Ribbit?</h1>
     <p>
       <%= form_for @user do |f| %>
+        <% if @user.errors.any? %>
+          <ul>
+            <% @user.errors.full_messages.each do |e| %>
+              <li><%= e %></li>
+            <% end %>
+          </ul>
+        <% end %>
+
         <%= f.text_field :email, placeholder: "email" %>
         <%= f.text_field :username, placeholder: "username" %>
         <%= f.text_field :name, placeholder: "name" %>
