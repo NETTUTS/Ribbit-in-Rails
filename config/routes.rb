@@ -1,4 +1,6 @@
 Ribbitapp::Application.routes.draw do
+  resources :ribbits
+
   resources :sessions
   resources :users
 

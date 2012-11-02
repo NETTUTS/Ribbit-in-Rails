@@ -1,0 +1,2 @@
+class RibbitsController < ApplicationController
+end
