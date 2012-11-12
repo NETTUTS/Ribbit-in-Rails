@@ -16,7 +16,7 @@ class User < ActiveRecord::Base
   private
 
   def prep_email
-    self.email = self.email.strip.downcase
+    self.email = self.email.strip.downcase if self.email
   end
 
   def create_avatar_hash
