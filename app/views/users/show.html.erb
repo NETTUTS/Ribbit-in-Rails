@@ -1,22 +1,33 @@
-<div class="wrapper">
-  <div id="createRibbit" class="panel right">
+<div id="createRibbit" class="panel right">
     <h1>Create a Ribbit</h1>
     <p>
-      <form>
+    <form>
         <textarea name="text" class="ribbitText"></textarea>
         <input type="submit" value="Ribbit!">
-      </form>
+    </form>
     </p>
-  </div>
-  <div id="ribbits" class="panel left">
+</div>
+<div id="ribbits" class="panel left">
     <h1>Your Ribbit Profile</h1>
     <div class="ribbitWrapper">
-      <img class="avatar" src="<%= @user.avatar_hash %>">
-      <span class="name"><%= @user.name %></span> @<%= @user.username %>
-      <p>
-        567 Ribbits<span class="spacing">45 Followers</span><span class="spacing">32 Following</span><br>
-        Cras justo odio, dapibus ac facilisis in, egestas Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. <a href="#">http://net.tutsplus.com/tutorials/php/ ...</a>
-      </p>
+        <img class="avatar" src="<%= @user.avatar_hash %>">
+        <span class="name"><%= @user.name %></span> @<%= @user.username %>
+        <p>
+        <%= @user.ribbits.size %> Ribbits
+        <span class="spacing">XX Followers</span>
+        <span class="spacing">XX Following</span>
+        </p>
     </div>
-  </div>
+</div>
+<div class="panel left">
+    <h1>Your Ribbits</h1>
+<!--    <% @user.ribbits.each do |ribbit| %>
+        <div class="ribbitWrapper">
+            <img class="avatar" src="<%= @user.avatar_hash %>">
+            <span class="name"><%= @user.name %></span> 
+            @<%= @user.username %> 
+            <span class="time"><%= time_ago_in_words(ribbit.created_at) %></span>
+            <p> <%= ribbit.content %> </p>
+        </div>
+    <% end %>-->
 </div>
