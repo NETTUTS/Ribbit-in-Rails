@@ -17,6 +17,14 @@ class User < ActiveRecord::Base
   validates :username, uniqueness: true, presence: true
   validates :name, presence: true
 
+  def following? user
+    self.followeds.include? user
+  end
+
+  def follow user
+    Relationship.create follower_id: self.id, followed_id: user.id
+  end
+
   private
 
   def prep_email
