@@ -2,8 +2,10 @@
     <h1>Public Profile</h1>
     <% @users.each do |user| %>
     <div class="ribbitWrapper">
+        <a href="<%= user_path user %>">
         <img class="avatar" src="<%= user.avatar_hash %>">
-        <span class="name"><%= user.name %></span> @<%= user.username %>
+        <span class="name"><%= user.name %></span></a>
+        @<%= user.username %>
         <p>
         <%= user.ribbits.size %> Ribbits
         <span class="spacing"><%= user.followers.count %> Followers</span>
