@@ -1,0 +1,25 @@
+<% if current_user %>
+<div id="createRibbit" class="panel right">
+    <h1>Create a Ribbit</h1>
+    <p>
+    <%= form_for @ribbit do |f| %>
+        <%= f.text_area :content, class: 'ribbitText' %>
+        <%= f.submit "Ribbit!" %>
+    <% end %>
+    </p>
+</div>
+<% end %>
+<div class="panel left">
+    <h1>Buddies' Ribbits</h1>
+    <% @ribbits.each do |ribbit| %>
+        <div class="ribbitWrapper">
+            <a href="<%= user_path ribbit.user %>">
+            <img class="avatar" src="<%= ribbit.user.avatar_hash %>">
+            <span class="name"><%= ribbit.user.name %></span> 
+            </a>
+            @<%= ribbit.user.username %> 
+            <span class="time"><%= time_ago_in_words(ribbit.created_at) %></span>
+            <p> <%= ribbit.content %> </p>
+        </div>
+    <% end %>
+</div>
